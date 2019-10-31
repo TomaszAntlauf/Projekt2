@@ -9,8 +9,8 @@ public class StudentSerwis {
         return students;
     }
 
-    List<Student> addStudents(NewStudent newstudent) {
-        throw new UnsupportedOperationException();
+    Student addStudents(NewStudent newstudent) {
+        return new Student(1,"aa","aa","aa");
 
     }
 }

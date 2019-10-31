@@ -24,7 +24,7 @@ public class PunktyControler {
     }
 
     @PostMapping("/adduser")
-    public ArrayList<String> addUser(@RequestBody NewStudent name)
+    public Student addUser(@RequestBody NewStudent name)
     {
         return service.addStudents(name);
     }

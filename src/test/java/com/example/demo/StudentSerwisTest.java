@@ -17,8 +17,7 @@ public class StudentSerwisTest {
     @Test
     public void addStudents() {
         final StudentSerwis service = new StudentSerwis();
-        final Student created = service.addStudent(new NewStudent("Student1","1-2-
-                3","IP"));
+        final Student created = service.addStudents(new NewStudent("Student1","1-2-3","IP"));
         assertNotNull(created);
     }
 
