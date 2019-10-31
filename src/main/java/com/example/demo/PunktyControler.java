@@ -14,19 +14,18 @@ import java.util.ArrayList;
 public class PunktyControler {
 
 
-    CopyOnWriteArrayList<String> lista = new CopyOnWriteArrayList<>();
+   StudentSerwis service = new StudentSerwis();
 
 
     @RequestMapping("/users")
-    public ArrayList<String> getUsers()
+    public ArrayList<Student> getUsers()
     {
-        return new ArrayList<>(lista);
+        return new ArrayList<>(service.getStudents().asJava());
     }
 
     @PostMapping("/adduser")
-    public ArrayList<String> addUser(@RequestBody String name)
+    public ArrayList<String> addUser(@RequestBody NewStudent name)
     {
-        lista.add(name);
-        return new ArrayList<>(lista);
+        return service.addStudents(name);
     }
 }

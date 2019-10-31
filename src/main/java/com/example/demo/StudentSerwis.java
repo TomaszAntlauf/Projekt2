@@ -6,7 +6,7 @@ import io.vavr.collection.List;
 public class StudentSerwis {
     private List<Student> students = List.empty();
     List<Student> getStudents() {
-        throw new UnsupportedOperationException();
+        return students;
     }
 
     List<Student> addStudents(NewStudent newstudent) {
