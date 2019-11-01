@@ -6,11 +6,13 @@ import io.vavr.collection.List;
 public class StudentSerwis {
     private List<Student> students = List.empty();
     List<Student> getStudents() {
-        return students;
+        return this.students;
     }
 
     Student addStudents(NewStudent newstudent) {
-        return new Student(1,"aa","aa","aa");
+        Student created = new Student(1, newstudent.name, newstudent.number, newstudent.grupa);
+        students=students.prepend(created);
+        return created;
 
     }
 }
