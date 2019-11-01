@@ -21,4 +21,12 @@ public class StudentSerwisTest {
         assertNotNull(created);
     }
 
+    @Test
+    public void addStudentIsReturn() {
+        final StudentSerwis service = new StudentSerwis();
+        final Student created = service.addStudents(new NewStudent("Student1","1-2-3","IP"));
+        final List<Student> all = service.getStudents();
+        assertEquals(all.get(0).name, "Student1");
+    }
+
 }
