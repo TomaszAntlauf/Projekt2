@@ -10,7 +10,7 @@ public class StudentSerwis {
     }
 
     Student addStudents(NewStudent newstudent) {
-        Student created = new Student(1, newstudent.name, newstudent.number, newstudent.grupa);
+        Student created = new Student(students.size() +1, newstudent.name, newstudent.number, newstudent.grupa);
         students=students.prepend(created);
         return created;
 

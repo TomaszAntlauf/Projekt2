@@ -36,6 +36,7 @@ public class StudentSerwisTest {
         final Student created2 = service.addStudents(new NewStudent("Student2","2-2-3","IP"));
 
         assertNotEquals(created.id,created2.id);
+        assertEquals(2,service.getStudents().size());
 
     }
 
