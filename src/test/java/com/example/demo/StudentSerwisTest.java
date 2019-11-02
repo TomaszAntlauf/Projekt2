@@ -29,4 +29,14 @@ public class StudentSerwisTest {
         assertEquals(all.get(0).name, "Student1");
     }
 
+    @Test
+    public void addStudentHasNewId() {
+        final StudentSerwis service = new StudentSerwis();
+        final Student created = service.addStudents(new NewStudent("Student1","1-2-3","IP"));
+        final Student created2 = service.addStudents(new NewStudent("Student2","2-2-3","IP"));
+
+        assertNotEquals(created.id,created2.id);
+
+    }
+
 }
