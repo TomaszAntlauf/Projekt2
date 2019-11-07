@@ -1,4 +1,5 @@
-package db;
+package com.example.demo.db;
+
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,10 +8,9 @@ import javax.persistence.Id;
 public class StudentRow {
     @Id
     private long id;
-
     private String name;
     private String number;
-    private String group;
+    private String group1;
 
     public long getId() {
         return id;
@@ -36,11 +36,11 @@ public class StudentRow {
         this.number = number;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGroup1() {
+        return group1;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setGroup1(String group1) {
+        this.group1 = group1;
     }
 }
