@@ -25,7 +25,14 @@ public class StudentSerwis {
     }
 
     List<Student> getStudents() {
-        throw new UnsupportedOperationException();
+        return List.ofAll(this.repository.findAll())
+                .map(dbObj->
+                        new Student(
+                                dbObj.getId(),
+                                dbObj.getName(),
+                                dbObj.getNumber(),
+                                dbObj.getGroup1())
+                );
     }
     Student addStudents(final NewStudent newStudent) {
         throw new UnsupportedOperationException();
