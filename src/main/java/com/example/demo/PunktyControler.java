@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.ArrayList;
 
 @RestController
@@ -17,7 +15,11 @@ import java.util.ArrayList;
 public class PunktyControler {
 
 
-    StudentSerwis service = new StudentSerwis();
+    private final StudentSerwis service;
+
+    public PunktyControler(StudentSerwis service) {
+        this.service = service;
+    }
 
 
     @RequestMapping(value = "/students", method = RequestMethod.GET,
