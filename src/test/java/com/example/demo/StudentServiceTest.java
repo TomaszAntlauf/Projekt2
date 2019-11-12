@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.db.StudentRepository;
 import io.vavr.collection.List;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,5 +50,11 @@ public class StudentServiceTest {
         assertEquals(2,service.getStudents().size());
 
     }
+
+    @After
+    public void cleanAfterTest() {
+        this.repository.deleteAll();
+    }
+
 
 }
