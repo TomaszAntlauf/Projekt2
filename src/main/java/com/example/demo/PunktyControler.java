@@ -15,9 +15,9 @@ import java.util.ArrayList;
 public class PunktyControler {
 
 
-    private final StudentSerwis service;
+    private final StudentService service;
 
-    public PunktyControler(StudentSerwis service) {
+    public PunktyControler(StudentService service) {
         this.service = service;
     }
 

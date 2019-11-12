@@ -6,21 +6,11 @@ import io.vavr.collection.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StudentSerwis {
-   /* private List<Student> students = List.empty();
-    List<Student> getStudents() {
-        return this.students;
-    }
+public class StudentService {
 
-    Student addStudents(NewStudent newstudent) {
-        Student created = new Student(students.size() +1, newstudent.name, newstudent.number, newstudent.group);
-        students=students.prepend(created);
-        return created;
-
-    }
-    */
    private final StudentRepository repository;
-    public StudentSerwis(StudentRepository repository) {
+
+   public StudentService(StudentRepository repository) {
         this.repository = repository;
     }
 
@@ -34,6 +24,7 @@ public class StudentSerwis {
                                 dbObj.getGroup1())
                 );
     }
+
     Student addStudents(final NewStudent newStudent) {
         throw new UnsupportedOperationException();
     }
