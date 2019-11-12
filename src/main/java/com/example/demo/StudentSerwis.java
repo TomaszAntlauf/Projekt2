@@ -3,7 +3,9 @@ package com.example.demo;
 //import java.util.List;
 import com.example.demo.db.StudentRepository;
 import io.vavr.collection.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentSerwis {
    /* private List<Student> students = List.empty();
     List<Student> getStudents() {
