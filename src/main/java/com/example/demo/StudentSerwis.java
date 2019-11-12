@@ -25,7 +25,7 @@ public class StudentSerwis {
     List<Student> getStudents() {
         throw new UnsupportedOperationException();
     }
-    Student addStudent(final NewStudent newStudent) {
+    Student addStudents(final NewStudent newStudent) {
         throw new UnsupportedOperationException();
     }
 
