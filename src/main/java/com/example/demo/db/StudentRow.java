@@ -8,6 +8,15 @@ import javax.persistence.Id;
 public class StudentRow {
     @Id
     private long id;
+
+    protected StudentRow(){}
+
+    public StudentRow(String name, String number, String group1) {
+        this.name = name;
+        this.number = number;
+        this.group1 = group1;
+    }
+
     private String name;
     private String number;
     private String group1;
