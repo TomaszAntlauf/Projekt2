@@ -2,11 +2,13 @@ package com.example.demo.db;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class StudentRow {
-    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     protected StudentRow(){}
