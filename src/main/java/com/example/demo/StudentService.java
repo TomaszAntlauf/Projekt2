@@ -21,8 +21,7 @@ public class StudentService {
 
     List<Student> getStudents() {
         return List.ofAll(this.repository.findAll())
-                .map(getStudentRowStudentFunction()
-                );
+                .map(getStudentRowStudentFunction());
     }
 
     private Function<StudentRow, Student> getStudentRowStudentFunction() {

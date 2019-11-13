@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -45,7 +46,7 @@ public class StudentServiceTest {
         final StudentService service = new StudentService(repository);
         final Student created = service.addStudents(new NewStudent("Student1","1-2-3","IP"));
         final Student created2 = service.addStudents(new NewStudent("Student2","2-2-3","IP"));
-
+        System.out.println(created.id+" "+created2.id);
         assertNotEquals(created.id,created2.id);
         assertEquals(2,service.getStudents().size());
 
