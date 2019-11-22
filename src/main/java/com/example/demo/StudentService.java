@@ -11,38 +11,26 @@ import java.util.function.Function;
 @Service
 public class StudentService {
 
-   private final StudentRepository repository;
+    private final StudentRepository repository;
 
 
 
-   public StudentService(StudentRepository repository) {
+    public StudentService(StudentRepository repository) {
         this.repository = repository;
     }
 
     List<Student> getStudents() {
         return List.ofAll(this.repository.findAll())
-                .map(getStudentRowStudentFunction());
+                .map(StudentRow::toStudent);
     }
 
-    private Function<StudentRow, Student> getStudentRowStudentFunction() {
-        return dbObj->
-                new Student(
-                        dbObj.getId(),
-                        dbObj.getName(),
-                        dbObj.getNumber(),
-                        dbObj.getGroup1());
-    }
+
 
     Student addStudents(final NewStudent newStudent) {
-
-       //throw new UnsupportedOperationException();
-
-        StudentRow created = this.repository.save(new StudentRow(
+        return this.repository.save(new StudentRow(
                 newStudent.name,
                 newStudent.number,
-                newStudent.group));
-        return getStudentRowStudentFunction().apply(created);
-    }
+                newStudent.group)).toStudent();}
 
 
 }
